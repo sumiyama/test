@@ -1,0 +1,160 @@
+html {
+  scroll-behavior: smooth;
+  height: 100%;
+  max-height: 100vh;
+}
+
+.body {
+  background: #fff;
+  font-family: 'Yellowtail', cursive;
+  font-size: 20px;
+}
+
+.start-page-top h1 {
+  text-align: center;
+  font-size: 10vw;
+}
+
+.start-page {
+  width: 100vw;
+  display: flex;
+  min-height: 100vh;
+  font-size: 1.2vw;
+}
+
+.start-page_a {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  height: 100vh;
+  width: 33.33vw;
+}
+
+.start-page_a img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 70%;
+}
+
+.start-page_b {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  height: 100vh;
+  width: 33.33vw;
+}
+
+.start-page_b img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 70%;
+}
+
+.start-page_c {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  height: 100vh;
+  width: 33.33vw;
+}
+
+.start-page_c img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 70%;
+}
+
+.start-page img {
+  display: inline-block;
+  transition: .2s;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+
+.start-page img:hover {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.2);
+}
+
+.THANKYOU {
+  text-align: center;
+  padding-top: 50vh;
+  font-size: 25px;
+}
+
+.THANKYOU_2 {
+  text-align: right;
+  padding-top: 40vh;
+  font-size: 15px;
+}
+
+///start-page2.css
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.wrap {
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.content {
+  width: auto;
+  height: auto;
+}
+
+.next-page {
+  color:white;
+}
+
+p {
+  font-size: 15px;
+  color: white;
+  line-height: 3em;
+}
+
+.fadein {
+  opacity: 0;
+  animation: fadein 6s ease forwards;
+}
+
+@keyframes fadein {
+  100% {
+    opacity: 1;
+  }
+}
+
+.txt01 {
+  animation-delay: 0.2s;
+}
+
+.txt02 {
+  animation-delay: 3s;
+}
+
+.txt03 {
+  animation-delay: 6s;
+}
+
+.txt04 {
+  animation-delay: 4.8s;
+  font-size: 1.8em;
+}
+
+.txt05 {
+  animation-delay: 8s;
+  font-size: 0.8em;
+}
+
+.txt06 {
+  animation-delay: 12s;
+}
