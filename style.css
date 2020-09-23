@@ -1,0 +1,404 @@
+html {
+  text-align: center;
+}
+
+/*----------*/
+h1 {
+  font-size: 2em;
+  width: 914px;
+  margin: 0 auto;
+  padding-left: 0.5em;
+  text-align: left;
+  position: relative;
+  border-bottom: 3px solid #e7e7e7;
+  padding-bottom: 5px;
+}
+
+h1::after {
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  display: block;
+  content: " ";
+  width: 15%;
+  border-bottom: 3px solid #3c58a7;
+}
+
+.table_center {
+  width: 100%;
+}
+
+table.table01 {
+  margin: 0 auto;
+  border-right: #00AFF0 solid 1px;
+  border-collapse: collapse;
+}
+
+table.table01 thead th {
+  background: #00AFF0;
+  color: #FFF;
+  padding: 10px 15px;
+  border-right: #FFF solid 1px;
+  border-bottom: #FFF solid 1px;
+}
+
+table.table01 thead th:last-child {
+  border-right: #00AFF0 solid 1px;
+}
+
+table.table01 tbody th {
+  background: #00AFF0;
+  color: #FFF;
+  padding: 10px 15px;
+  border-bottom: #FFF solid 1px;
+  vertical-align: top;
+}
+
+table.table01 tbody td {
+  background: #FFF;
+  padding: 10px 15px;
+  border-left: #00AFF0 solid 1px;
+  border-bottom: #00AFF0 solid 1px;
+  vertical-align: top;
+}
+
+@media (max-width:767px) {
+  table.table01 thead {
+    display: none;
+  }
+
+  table.table01 tbody th {
+    display: block;
+  }
+
+  table.table01 tbody td {
+    display: block;
+  }
+
+  table.table01 tbody td::before {
+    content: attr(label);
+    float: left;
+    clear: both;
+    font-weight: bold;
+  }
+
+  table.table01 tbody td p {
+    padding-left: 6em;
+  }
+
+  table.table01 tbody td p a {
+    padding-left: 6em;
+  }
+
+  table.table01 tbody p:first-child {
+    padding-left: 2em;
+  }
+
+  table.table01 tbody .overflow02 p {
+    padding-left: 2em;
+  }
+  .float_left{
+    margin-right: 2em;
+  }
+}
+
+.table01 li {
+  list-style-type: none;
+}
+
+.float_left{
+  text-align: left;
+}
+
+.space {
+  height: 65px;
+}
+
+.edit {
+  width: 120px;
+}
+
+.align01 {
+  display: inline-block;
+  width: 4.5em;
+}
+
+.align02 {
+  display: inline-block;
+  width: 3.5em;
+}
+
+.width01 {
+  width: 12em;
+}
+
+.width02 {
+  width: 20em;
+}
+
+.width03 {
+  width: 20em;
+}
+
+.width04 {
+  width: 4em;
+}
+
+.overflow p {
+  min-width: 12em;
+  max-width: 20em;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.overflow .of2 {
+  min-width: 20em;
+  max-width: 30em;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+.search_container{
+  box-sizing: border-box;
+  margin:1em;
+}
+.search_container input[type="search"]{
+  background: #00AFF024;
+  border: none;
+  height: 35px;
+}
+.search_container input[type="search"]:focus {
+  outline: 0;
+  background: #00AFF035;
+}
+.search_container input[type="submit"]{
+  cursor: pointer;
+  border: none;
+  background: #00AFF0;
+  color: #fff;
+  outline : none;
+  margin-left:-6px;
+  width: 5em;
+  height: 35px;
+}
+.search_container input[type="submit"]:hover{
+  opacity: 0.8;
+}
+
+
+/*-----HOME-----*/
+#login_form_box table{
+  margin: 15px auto;
+}
+
+.login_form {
+  width: 400px;
+  height: 340px;
+}
+
+.login_form input {
+  margin: 2px;
+  width: 240px;
+  height: 30px;
+}
+
+
+/*-----ADOMIN-PAGE----*/
+.add {
+  margin:1em auto;
+	width: 160px;
+	padding: 0.8em;
+  text-align: center;
+  text-decoration: none;
+	background: #51D941 ;
+	border-radius: 2px;
+}
+.add:hover {
+  background: #69e75b;
+}
+.add a{
+  color:#fafafa;
+}
+.caution a{
+  color:red;
+}
+.ul:hover{
+  text-decoration: underline;
+}
+.btn{
+  margin: 3px;
+  margin-right: 3px;
+  width:4em;
+  padding: 0.2em;
+  text-align: center;
+  text-decoration: none;
+	background: #f0f0f0;
+  border-radius: 2px;
+}
+.float_right{
+  display: flex;
+  margin-top: 1em;
+}
+
+
+/*-----HEADER-----*/
+
+html,
+body {
+  overflow-x: hidden;
+  height: 100%;
+}
+
+body {
+  background: #fff;
+  padding: 0;
+  margin: 0;
+}
+
+.header {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 100%;
+  box-shadow: none;
+  background-color: #00AFF0;
+  position: fixed;
+  height: 60px !important;
+  overflow: hidden;
+  z-index: 19990424;
+}
+
+.header span,
+.header span a {
+  float: right;
+  width: 300px;
+  color: #fff;
+}
+
+.main {
+  margin: 0 auto;
+  display: block;
+  height: 100%;
+  margin-top: 60px;
+}
+
+#sidebarMenu {
+  height: 100%;
+  position: fixed;
+  left: 0;
+  width: 250px;
+  margin-top: 60px;
+  transform: translateX(-250px);
+  transition: transform 250ms ease-in-out;
+  background: linear-gradient(180deg, #00AFF0 0%, #00146E 100%);
+  z-index: 19990424;
+}
+
+.sidebarMenuInner {
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+.sidebarMenuInner li {
+  list-style: none;
+  color: #fff;
+  text-transform: uppercase;
+  padding: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+.sidebarMenuInner li span {
+  display: block;
+  font-size: 14px;
+  margin: 2px 0;
+  color: rgba(255, 255, 255, 0.50);
+}
+
+.sidebarMenuInner li a {
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+input[type="checkbox"]:checked~#sidebarMenu {
+  transform: translateX(0);
+}
+
+input[type=checkbox] {
+  transition: all 0.3s;
+  box-sizing: border-box;
+  display: none;
+}
+
+.sidebarIconToggle {
+  transition: all 0.3s;
+  box-sizing: border-box;
+  position: absolute;
+  z-index: 19990914;
+  height: 100%;
+  width: 100%;
+  top: 22px;
+  left: 15px;
+  height: 22px;
+  width: 22px;
+}
+
+.spinner {
+  transition: all 0.3s;
+  box-sizing: border-box;
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background-color: #fff;
+}
+
+.horizontal {
+  transition: all 0.3s;
+  box-sizing: border-box;
+  position: relative;
+  float: left;
+  margin-top: 3px;
+}
+
+.diagonal.part-1 {
+  position: relative;
+  transition: all 0.3s;
+  box-sizing: border-box;
+  float: left;
+}
+
+.diagonal.part-2 {
+  transition: all 0.3s;
+  box-sizing: border-box;
+  position: relative;
+  float: left;
+  margin-top: 3px;
+}
+
+input[type=checkbox]:checked~.sidebarIconToggle>.horizontal {
+  transition: all 0.3s;
+  box-sizing: border-box;
+  opacity: 0;
+}
+
+input[type=checkbox]:checked~.sidebarIconToggle>.diagonal.part-1 {
+  transition: all 0.3s;
+  box-sizing: border-box;
+  transform: rotate(135deg);
+  margin-top: 8px;
+}
+
+input[type=checkbox]:checked~.sidebarIconToggle>.diagonal.part-2 {
+  transition: all 0.3s;
+  box-sizing: border-box;
+  transform: rotate(-135deg);
+  margin-top: -9px;
+}
