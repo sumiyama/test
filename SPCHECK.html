@@ -1,28 +1,3 @@
-<?php
-	session_start();
-	if($_SESSION['UserID'] == "")
-	{
-		echo "Please Login";
-		exit();
-	}
-
-	if($_SESSION['Status'] != "ADMIN")
-	{
-		echo "This page for Admin only!";
-		exit();
-	}	
-	
-	$serverName = "localhost";
-	$userName = "";
-	$userPassword = "";
-	$dbName = "";
-
-	$objCon = mysqli_connect($serverName,$userName,$userPassword,$dbName);
-
-	$strSQL = "SELECT * FROM member WHERE UserID = '".$_SESSION['UserID']."' ";
-	$objQuery = mysqli_query($objCon,$strSQL);
-	$objResult = mysqli_fetch_array($objQuery,MYSQLI_ASSOC);
-?>
 <html>
 <head>
 <title>ADMIN PAGE</title>
@@ -31,72 +6,12 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no" />
 </head>
 <body>
-	<?php
-/*-----検索-----*/
-	ini_set('display_errors', 1);
-	error_reporting(~0);
-
-	$strKeyword = null;
-
-	if(isset($_POST["txtKeyword"]))
-	{
-		$strKeyword = $_POST["txtKeyword"];
-	}
-	if(isset($_GET["txtKeyword"]))
-	{
-		$strKeyword = $_GET["txtKeyword"];
-	}
-?>
-<?php
-/*-----DB接続 リスト表示-----*/   
-    $conn = mysqli_connect($serverName,$userName,$userPassword,$dbName);
-
-	$sql = "SELECT * FROM company WHERE Code collate utf8_unicode_ci LIKE '%".$strKeyword."%' or Name collate utf8_unicode_ci LIKE '%".$strKeyword."%' or Industry collate utf8_unicode_ci LIKE '%".$strKeyword."%' "; //　検索範囲　”id” or ”name”
-	$query = mysqli_query($conn,$sql);
-
-	$num_rows = mysqli_num_rows($query);
-
-	$per_page = 100;   // Per Page
-	$page  = 1;
-	
-	if(isset($_GET["Page"]))
-	{
-		$page = $_GET["Page"];
-	}
-
-	$prev_page = $page-1;
-	$next_page = $page+1;
-
-	$row_start = (($per_page*$page)-$per_page);
-	if($num_rows<=$per_page)
-	{
-		$num_pages =1;
-	}
-	else if(($num_rows % $per_page)==0)
-	{
-		$num_pages =($num_rows/$per_page) ;
-	}
-	else
-	{
-		$num_pages =($num_rows/$per_page)+1;
-		$num_pages = (int)$num_pages;
-	}
-	$row_end = $per_page * $page;
-	if($row_end > $num_rows)
-	{
-		$row_end = $num_rows;
-	}
-
-	$sql .= " ORDER BY Name ASC LIMIT $row_start ,$row_end ";
-	$query = mysqli_query($conn,$sql);
-
-?>
 <h2>- Admin Page -</h2><p><a href="../login/logout.php" class="ul">Logout</a></p><p><?php echo $objResult["Username"];?>でログイン中 <a href="../edit_profile.php" class="ul">ログイン情報の変更</a></p><br>
 <div class="table_center">
 <h1>企業一覧 管理者ページ</h1>
 <a href="add.php"><div class="add ul">企業情報を登録</a></div>
-<form name="frmSearch" method="post" class="search_container" action="<?php echo $_SERVER['SCRIPT_NAME'];?>">
-      <input name="txtKeyword" type="search" id="txtKeyword" size="25" value="<?php echo $strKeyword;?>" placeholder="検索キーワードを入力" autocomplete="off">
+<form name="frmSearch" method="post" class="search_container">
+      <input name="txtKeyword" type="search" id="txtKeyword" size="25" placeholder="検索キーワードを入力" autocomplete="off">
       <input type="submit" value="検索">
 </form>
 検索結果 <?php echo $num_rows;?>件
@@ -108,16 +23,12 @@
 		  <th class="width03">業務内容</th>
 		</tr>
 	  </thead>
-		<?php
-while($result=mysqli_fetch_array($query,MYSQLI_ASSOC))
-{
-?>
 	  <tbody>
 		<tr class="overflow">
 		  <th><ul>
 			<span class="float_left"><li>サントリーホールディングス</li>
 			<li>1234</li></span>
-			<span class="float_right"><li class="btn ul"><a編集</a></li>
+			<span class="float_right"><li class="btn ul"><a>編集</a></li>
 			<li class="btn caution ul"><a>削除</a></li></span>
 	   </ul></th>
 		  <td label="各種情報">
@@ -131,41 +42,10 @@ while($result=mysqli_fetch_array($query,MYSQLI_ASSOC))
 
 かつてはサントリー株式会社を中心とするグループであったが、2009年（平成21年）4月1日よりサントリーホールディングス株式会社（英語: Suntory Holdings Limited）を中心とした持株会社制に移行。本項ではこれについても記述する。</p>
 			  <p><span class="align01">企業HP</span>: https://www.suntory.co.jp/</p><br>
-			  <p class="ul"><a href="../detail.php?name=<?php echo $result["Name"];?>">詳細</a></p></td>
+			  <p class="ul">詳細</a></p></td>
 		</tr>
 	  </tbody>
 	  <tr></tr>
-	  <?php
-}
-?>
 	</table>
 	</div>
 <br><br>
-<?php
-/*-----検索2-----*/
-if($prev_page)
-{
-	echo " <a href='$_SERVER[SCRIPT_NAME]?Page=$prev_page&txtKeyword=$strKeyword'>< Back</a> ";
-}
-
-for($i=1; $i<=$num_pages; $i++){
-	if($i != $page)
-	{
-		echo "[ <a href='$_SERVER[SCRIPT_NAME]?Page=$i&txtKeyword=$strKeyword'>$i</a> ]";
-	}
-	else
-	{
-		echo "<b> $i </b>";
-	}
-}
-if($page!=$num_pages)
-{
-	echo " <a href ='$_SERVER[SCRIPT_NAME]?Page=$next_page&txtKeyword=$strKeyword'>Next ></a> ";
-}
-$conn = null;
-?>
-</body>
-</html>
-<?php
-	mysqli_close($objCon);
-?>
