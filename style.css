@@ -65,6 +65,7 @@ table.table01 tbody td {
 @media (max-width:767px) {
   table.table01 thead {
     display: none;
+float: left;
   }
 
   table.table01 tbody th {
@@ -189,12 +190,13 @@ float:left;
   margin-left:-6px;
   width: 5em;
   height: 35px;
--webkit-appearance:none;
 }
 .search_container input[type="submit"]:hover{
   opacity: 0.8;
 }
-
+input[type="submit"] {
+-webkit-appearance:none;
+}
 
 /*-----HOME-----*/
 #login_form_box table{
