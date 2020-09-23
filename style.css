@@ -62,6 +62,14 @@ table.table01 tbody td {
   vertical-align: top;
 }
 
+th, td {
+@media only screen(max-width: 414px){
+display:block;
+width:100%;
+float:left;
+}
+}
+
 @media (max-width:767px) {
   table.table01 thead {
     display: none;
