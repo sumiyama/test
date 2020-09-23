@@ -65,7 +65,6 @@ table.table01 tbody td {
 @media (max-width:767px) {
   table.table01 thead {
     display: none;
-float: left;
   }
 
   table.table01 tbody th {
@@ -75,7 +74,6 @@ float:left;
 
   table.table01 tbody td {
     display: block;
-float:left;
   }
 
   table.table01 tbody td::before {
