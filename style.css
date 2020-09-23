@@ -69,10 +69,12 @@ table.table01 tbody td {
 
   table.table01 tbody th {
     display: block;
+float:left;
   }
 
   table.table01 tbody td {
     display: block;
+float:left;
   }
 
   table.table01 tbody td::before {
@@ -187,6 +189,7 @@ table.table01 tbody td {
   margin-left:-6px;
   width: 5em;
   height: 35px;
+-webkit-appearance:none;
 }
 .search_container input[type="submit"]:hover{
   opacity: 0.8;
